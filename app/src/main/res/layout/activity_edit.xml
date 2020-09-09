@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Theme.AppCompat.Dialog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:padding="5dp"
+    tools:context=".Edit">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/txtReminder"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:ems="10"
+                android:hint="Reminder"
+                android:inputType="text"
+                android:nextFocusDown="@+id/txtReminderDesc" />
+
+            <EditText
+                android:id="@+id/txtReminderDesc"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="Reminder description"
+                android:inputType="textMultiLine"
+                android:nextFocusDown="@+id/txtDate" />
+
+            <LinearLayout
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/txtDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:hint="Date"
+                    android:inputType="date"
+                    android:nextFocusDown="@+id/txtBeforeDay"
+                    android:textIsSelectable="true" />
+
+
+                <EditText
+                    android:id="@+id/txtTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:hint="Time"
+                    android:inputType="time"
+                    android:nextFocusDown="@+id/swtEveryDay"
+                    android:textIsSelectable="true" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/txtBeforeDay"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:ems="10"
+                android:hint="Before Days"
+                android:inputType="numberSigned"
+                android:nextFocusDown="@+id/txtTime" />
+
+            <Switch
+                android:id="@+id/swtEveryDay"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:fontFamily="sans-serif-black"
+                android:nextFocusDown="@+id/btnSave"
+                android:text="Every Day"
+                android:theme="@style/SwitchTheme" />
+
+            <LinearLayout
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btnSave"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:background="#1394F6"
+                    android:text="Save" />
+
+                <Button
+                    android:id="@+id/btnCancel"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:background="#1394F6"
+                    android:text="Cancel" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
